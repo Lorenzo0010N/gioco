@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gioco</title>
+</head>
+<body>
+    <background>
+        <div class="background-transparent-div"></div>
+        <div class="background-image"></div>
+    </background>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="code/index.js" defer></script>
+    <div class="menu-container">
+        <div class="title">Gioco</div>
+        <div class="buttons">
+            <button class="button" id="start">Gioca</button>
+            <button class="button" id="leaderboard">Classifica</button>
+            <button class="button" id="badge">Badge</button>
+        </div>
+    </div>
+    <div class="loading-screen">
+        <div class="loading-text">Caricamento in corso.</div>
+    </div>
+    <div class="game-container" style="display: none;">
+        <div class="character"></div>
+        <div class="obstacles-container"></div>
+        <div class="lives">Vite: <span id="lives-count">3</span></div>
+        <div class="game-over-screen">
+            <h1>Game Over</h1>
+            <button id="restart">Ricomincia</button>
+        </div>
+        <div class="question-popup">
+            <h2>Domanda</h2>
+            <p id="question-text"></p>
+            <input type="text" id="answer-input" placeholder="Rispondi qui">
+            <button id="submit-answer">Invia</button>
+        </div>
+    </div>
+    <div class="obstacles"></div>
+</body>
+</html>
