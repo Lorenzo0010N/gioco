@@ -1,1 +1,10 @@
-
+{
+    "owner": {
+        "jumps-count": 0,
+        "badges": [
+            "owner",
+            "you-played",
+            "you win"
+        ]
+    }
+}
