@@ -1,1 +1,191 @@
+/* Trasparente background */
+.background-transparent-div {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+}
 
+background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Background dinamico */
+.background-image {
+    display: flex;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-image img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    top: 0;
+}
+
+/* Corpo principale con una vista flex */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container centrale, responsivo */
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Schermo di caricamento */
+.loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgb(216, 204, 183);
+    display: none;
+}
+
+.loading-screen .loading-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(116, 108, 96); 
+}
+
+/* Menu centrale, responsivo */
+.menu-container {
+    background-color: rgb(230, 195, 137);
+    padding: 5% 10%; /* Usa percentuali per una maggiore adattabilità */
+    border-radius: 20px;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.822);
+    text-align: center;
+    border: 7px solid rgba(255, 255, 255, 0.479);
+    width: 60%; /* Imposta la larghezza dinamica */
+    min-width: 250px;
+    min-height: 200px;
+    max-height: 80vh;  /* Usa un massimo basato sulla vista verticale */
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    z-index: 100;
+    transition: all 0.3s ease-in-out; /* Animazione per il ridimensionamento */
+}
+
+/* Pulsanti nel menu */
+.menu-container button {
+    background-color: transparent;
+    border: none;
+    padding: 5% 10%; /* Usa percentuali per adattarsi */
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.479);
+    margin-top: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    min-width: 200px;
+    font-size: 1.5rem;  /* Ridimensiona il font */
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-container button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animazione per la schermata di avvio */
+@keyframes opacity-game-start {
+    0% {
+        opacity: 1;
+        display: flex;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes opacity-game-b-start {
+    100% {
+        opacity: 1;
+        display: flex;
+    }
+    0% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* Media Queries per schermi più piccoli */
+@media (max-width: 768px) {
+    .menu-container {
+        font-size: 1.5rem;
+        width: 80%;
+    }
+
+    .loading-screen .loading-text {
+        font-size: 1.5rem;
+    }
+
+    .menu-container button {
+        padding: 8% 15%; /* Riduci il padding per i pulsanti su schermi più piccoli */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-container {
+        font-size: 1.2rem;
+        width: 90%;
+    }
+
+    .loading-screen .loading-text {
+        font-size: 1.2rem;
+    }
+
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    .menu-container button {
+        padding: 10% 20%; /* Riduci il padding per i pulsanti su schermi molto piccoli */
+    }
+}
